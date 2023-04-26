@@ -44,8 +44,8 @@ contract BuyMeACoffeeV1 {
 
     // Event emitted when a user buys coffee using an ERC20 token
     event CoffeeBoughtERC20(
-        address indexed buyer,
         address indexed token,
+        address indexed buyer,
         uint256 amount,
         string message,
         uint256 timestamp

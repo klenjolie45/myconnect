@@ -1,7 +1,7 @@
 import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs"
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers"
 import { expect } from "chai"
-import { BigNumber } from "ethers"
+import { BigNumber, Contract } from "ethers"
 import { ethers, network, deployments } from "hardhat"
 import { developmentChains } from "../../helper-hardhat-config"
 import { BuyMeACoffeeV1, MockV3Aggregator } from "../../typechain-types"
@@ -128,6 +128,15 @@ import { BuyMeACoffeeV1, MockV3Aggregator } from "../../typechain-types"
               it("Should fail to buy coffee with zero units", async () => {})
               it("Should emit the CoffeeBought event when buying coffee with ETH", async () => {})
           })
+
+          describe("Buying Coffee with Ether", () => {
+              it("Should buy a coffee with the correct amount of ERC20 tokens", async () => {})
+
+              it("Should fail to buy coffee with unsupported ERC20 tokens", async () => {})
+              it("Should fail to buy coffee with insufficient ERC20 token balance", async () => {})
+              it("Should fail to buy coffee with zero units using ERC20 tokens", async () => {})
+              it("Should emit the CoffeeBoughtERC20 event when buying coffee with ERC20 tokens", async () => {})
+          })
       })
 /* 
 Initialization and Configuration
@@ -149,6 +158,7 @@ it("Should fail to buy coffee with unsupported ERC20 tokens", async () => {})
 it("Should fail to buy coffee with insufficient ERC20 token balance", async () => {})
 it("Should fail to buy coffee with zero units using ERC20 tokens", async () => {})
 it("Should emit the CoffeeBoughtERC20 event when buying coffee with ERC20 tokens", async () => {})
+
 Withdrawals
 
 it("Should allow owner to withdraw ETH balance", async () => {})
